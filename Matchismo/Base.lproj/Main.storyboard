@@ -26,11 +26,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9l7-gq-66Q">
                                 <rect key="frame" x="277" y="285" width="30" height="30"/>
                                 <animations/>
-                                <state key="normal" title="A♣︎">
+                                <state key="normal" backgroundImage="back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="185" y="285" width="30" height="30"/>
+                                    <rect key="frame" x="168" y="252" width="64" height="96"/>
                                 </variation>
                                 <connections>
                                     <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gA6-ow-SAb"/>
@@ -38,7 +38,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="flipCountLabel" destination="bvh-Ja-ipr" id="Ugv-A1-QoU"/>
@@ -48,5 +48,8 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="64" height="96"/>
+    </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
