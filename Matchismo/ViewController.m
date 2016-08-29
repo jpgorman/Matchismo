@@ -9,76 +9,66 @@
 #import "ViewController.h"
 #import "PlayingCardDeck.h"
 #import "PlayingCard.h"
+#import "PlayingCardGame.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *flipCountLabel;
-@property (nonatomic) int flipCount;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic) Deck *deck;
-@property (strong, nonatomic) NSMutableArray *shownCards;
-@property (nonatomic) BOOL active;
-@property (nonatomic) Card *drawCard;
-@property (nonatomic) NSUInteger maxCards;
+@property (nonatomic, strong) PlayingCardGame *game;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @end
 
 
 @implementation ViewController
 
+- (PlayingCardGame *)game
+{
+    if(!_game) _game = [[PlayingCardGame alloc] initWithCardCount:[self.cardButtons count]
+                                                        usingDeck:[self createDeck]];
+    return _game;
+}
+
 - (Deck *)deck {
-    if(!_deck) {
-        _deck = [[PlayingCardDeck alloc] init];
-    }
+    if(!_deck) _deck = [self createDeck];
     return _deck;
 }
 
-- (NSUInteger)maxCards {
-    
-    if(!_maxCards) {
-        _maxCards = [[PlayingCard validSuits] count] * [PlayingCard  maxRank];
-    }
-    return _maxCards;
-}
-
-- (NSMutableArray *)shownCards {
-    if(!_shownCards) _shownCards = [[NSMutableArray alloc] init];
-    return _shownCards;
-}
-
-- (void)setFlipCount:(int)flipCount {
-    _flipCount = flipCount;
-    self.flipCountLabel.text = [NSString stringWithFormat:@"Flip Count: %d"
-                                , self.flipCount];
-}
-
-- (Card *)drawCard {
-    Card *currentCard = [self.deck drawRandomCard];
-    
-    if([currentCard match: self.shownCards]){
-        return [self drawCard];
-    }
-    
-    if([self.shownCards count] == self.maxCards){
-        [self.shownCards removeAllObjects];
-    }
-    
-    [self.shownCards addObject:currentCard];
-    return currentCard;
+- (Deck *)createDeck
+{
+    return [[PlayingCardDeck alloc] init];
 }
 
 - (IBAction)handleButtonEvent:(UIButton *)sender {
-    self.active = !self.active;
-    if(!self.active) {
-        UIImage *cardImage = [UIImage imageNamed:@"back"];
-        [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
-        [sender setTitle:@"" forState:UIControlStateNormal];
-    } else {
-        UIImage *cardImage = [UIImage imageNamed:@"front"];
-        [sender setBackgroundImage:cardImage forState:UIControlStateNormal];
-        [sender setTitle:[self drawCard].contents forState:UIControlStateNormal];
-    }
-    
-    self.flipCount++;
 
+    NSUInteger cardIndex = [self.cardButtons indexOfObject:sender];
+    [self.game chooseCardAtIndex:cardIndex];
+    [self updateUI];
 }
 
+- (void)updateUI
+{
+    for (UIButton *cardButton in self.cardButtons) {
+        NSUInteger cardIndex = [self.cardButtons indexOfObject:cardButton];
+        Card *card = [self.game cardAtIndex:cardIndex];
+        [cardButton setTitle:[self titleForCard:card]
+                    forState:UIControlStateNormal];
+        [cardButton setBackgroundImage:[self backgroundImageForCard:card]
+                              forState:UIControlStateNormal];
+        cardButton.enabled = !card.isMatched;
+    }
+    
+    
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", (int)self.game.score];
+}
+
+- (NSString *)titleForCard:(Card *)card
+{
+    return card.isChosen ? card.contents : @"";
+}
+
+- (UIImage *)backgroundImageForCard:(Card *)card
+{
+    return [UIImage imageNamed:card.isChosen ? @"front" : @"back"];
+}
 
 @end
