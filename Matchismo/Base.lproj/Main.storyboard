@@ -118,7 +118,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0v-Cv-tvc">
-                                <rect key="frame" x="16" y="559" width="277" height="21"/>
+                                <rect key="frame" x="16" y="559" width="157" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -161,6 +161,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Currently Chosen: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3r-94-FeG">
+                                <rect key="frame" x="16" y="458" width="568" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -182,7 +189,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="matchingLabel" destination="hwn-Wi-Xk8" id="d8e-gF-B2n"/>
+                        <outlet property="chosenLabel" destination="n3r-94-FeG" id="nq1-zW-QRp"/>
+                        <outlet property="matchingLimitLabel" destination="hwn-Wi-Xk8" id="OF7-SY-nts"/>
                         <outlet property="scoreLabel" destination="j0v-Cv-tvc" id="jEq-UZ-bJq"/>
                         <outlet property="toggleNumber" destination="4Cg-Cc-LLW" id="wmg-2S-q88"/>
                         <outletCollection property="cardButtons" destination="9l7-gq-66Q" id="HH1-Mj-rSE"/>

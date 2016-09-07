@@ -14,7 +14,8 @@
 @interface ViewController ()
 @property (nonatomic) BOOL isMatchingMax;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (weak, nonatomic) IBOutlet UILabel *matchingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *matchingLimitLabel;
+@property (weak, nonatomic) IBOutlet UILabel *chosenLabel;
 @property (nonatomic) Deck *deck;
 @property (nonatomic, strong) PlayingCardGame *game;
 @property (weak, nonatomic) IBOutlet UISwitch *toggleNumber;
@@ -67,7 +68,7 @@ static const int MAX_MATCH_LIMIT = 3;
 - (IBAction)handleToggleEvent:(UISwitch *)sender
 {
     self.isMatchingMax = !self.isMatchingMax;
-    self.matchingLabel.text = [NSString stringWithFormat:@"Matching: %d", [self getMatchLimit]];
+    self.matchingLimitLabel.text = [NSString stringWithFormat:@"Matching: %d", [self getMatchLimit]];
 }
 
 - (void)updateUI
@@ -84,6 +85,7 @@ static const int MAX_MATCH_LIMIT = 3;
     
     
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", (int)self.game.score];
+    self.chosenLabel.text = [NSString stringWithFormat:@"Currently Chosen: %@", self.game.currentMatchState];
 }
 
 - (NSString *)titleForCard:(Card *)card

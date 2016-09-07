@@ -10,6 +10,7 @@
 
 @interface PlayingCardGame()
 @property (nonatomic, readwrite) NSInteger score;
+@property (nonatomic, readwrite) NSString *currentMatchState;
 @property (nonatomic, strong) NSMutableArray *cards;
 @property (nonatomic, strong) NSMutableArray *chosenCards;
 @property (nonatomic) int matchLimit;
@@ -23,6 +24,12 @@ static const int DEFAULT_MATCH_LIMIT = 2;
 
 @implementation PlayingCardGame
 @synthesize matchLimit = _matchLimit; // because custom setter and getter
+
+- (NSString *)currentMatchState
+{
+    if(!_currentMatchState) _currentMatchState = @"";
+    return _currentMatchState;
+}
 
 - (NSMutableArray *)cards
 {
@@ -93,11 +100,10 @@ static const int DEFAULT_MATCH_LIMIT = 2;
     
     NSUInteger count = [self.chosenCards count] - 1;
     if(count == self.matchLimit -1) {
-        NSLog(@"matchChosenCards");
         
         bool isMatched = YES;
-        
         Card *firstCard = [self.chosenCards objectAtIndex:0];
+        NSMutableString *str = [NSMutableString stringWithString:@""];
         
         for (NSUInteger i = 1; i <= count; i++) {
             
@@ -111,19 +117,29 @@ static const int DEFAULT_MATCH_LIMIT = 2;
 
         }
         
-        NSLog(isMatched ? @"matched" : @"not matched");
+        
         if(!isMatched) {
             // remove all cards bar first choice
-            for(NSUInteger i = count; i > 0; i--) {
-                Card *card = [self.chosenCards objectAtIndex:i];
+            for(Card *card in self.chosenCards) {
                 card.matched = NO;
+                [str appendString:card.contents];
+                [str appendString:@" "];
             }
+            
+            [str appendString:@"did not match 😔"];
+            
         } else {
             for(Card *card in self.chosenCards) {
                 card.matched = YES;
+                [str appendString:card.contents];
+                [str appendString:@" "];
             }
+            
+            [str appendString:@" matched 😀"];
             [self.chosenCards removeAllObjects];
         }
+        
+        self.currentMatchState = str;
     }
 }
 
