@@ -12,14 +12,24 @@
 #import "PlayingCardGame.h"
 
 @interface ViewController ()
+@property (nonatomic) BOOL isMatchingMax;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (nonatomic) Deck *deck;
 @property (nonatomic, strong) PlayingCardGame *game;
+@property (weak, nonatomic) IBOutlet UISwitch *toggleNumber;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @end
 
 
+static const BOOL MATCHING_MAX = false;
+
 @implementation ViewController
+
+- (BOOL)isMatchingMax
+{
+    if(!_isMatchingMax) _isMatchingMax = MATCHING_MAX;
+    return _isMatchingMax;
+}
 
 - (PlayingCardGame *)game
 {
@@ -39,10 +49,16 @@
 }
 
 - (IBAction)handleButtonEvent:(UIButton *)sender {
-
-    NSUInteger cardIndex = [self.cardButtons indexOfObject:sender];
-    [self.game chooseCardAtIndex:cardIndex];
+    
+    int limit = self.isMatchingMax ? 3 : 2;
+    NSInteger cardIndex = [self.cardButtons indexOfObject:sender];
+    [self.game chooseCardAtIndex:cardIndex withLimit:limit];
     [self updateUI];
+}
+
+- (IBAction)handleToggleEvent:(UISwitch *)sender
+{
+    self.isMatchingMax = !self.isMatchingMax;
 }
 
 - (void)updateUI
