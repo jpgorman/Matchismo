@@ -91,7 +91,6 @@ static const int DEFAULT_MATCH_LIMIT = 2;
 - (void)matchChosenCards
 {
     
-    NSLog(@"%d", self.matchLimit);
     NSUInteger count = [self.chosenCards count] - 1;
     if(count == self.matchLimit -1) {
         NSLog(@"matchChosenCards");
@@ -116,11 +115,8 @@ static const int DEFAULT_MATCH_LIMIT = 2;
         if(!isMatched) {
             // remove all cards bar first choice
             for(NSUInteger i = count; i > 0; i--) {
-                NSLog(@"%d", i);
                 Card *card = [self.chosenCards objectAtIndex:i];
                 card.matched = NO;
-                card.chosen = NO;
-                [self.chosenCards removeObjectAtIndex:i];
             }
         } else {
             for(Card *card in self.chosenCards) {
@@ -145,12 +141,16 @@ static const int DEFAULT_MATCH_LIMIT = 2;
             [self.chosenCards removeObject:card];
         } else {
             // add to list of chosen cards
-            [self.chosenCards addObject:card];
             
-            self.score -= COST_TO_CHOOSE;
-            card.chosen = YES;
-            [self getScores];
-            [self matchChosenCards];
+            
+            if([self.chosenCards count] < self.matchLimit) {
+                self.score -= COST_TO_CHOOSE;
+                card.chosen = YES;
+            
+                [self.chosenCards addObject:card];
+                [self getScores];
+                [self matchChosenCards];
+            }
         }
     }
 }
