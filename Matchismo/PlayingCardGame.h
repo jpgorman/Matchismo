@@ -20,6 +20,6 @@
 - (Card *)cardAtIndex:(NSUInteger)index;
 
 @property (nonatomic, readonly) NSInteger score;
-@property (nonatomic, readonly) NSString *currentMatchState;
+@property (nonatomic, readonly) NSMutableString *currentMatchState;
 
 @end

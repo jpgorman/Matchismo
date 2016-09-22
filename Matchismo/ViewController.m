@@ -7,8 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "PlayingCardDeck.h"
-#import "PlayingCard.h"
 #import "PlayingCardGame.h"
 
 @interface ViewController ()
@@ -49,7 +47,7 @@ static const int MAX_MATCH_LIMIT = 3;
 
 - (Deck *)createDeck
 {
-    return [[PlayingCardDeck alloc] init];
+    return nil;
 }
 
 - (int)getMatchLimit

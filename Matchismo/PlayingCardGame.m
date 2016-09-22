@@ -10,7 +10,7 @@
 
 @interface PlayingCardGame()
 @property (nonatomic, readwrite) NSInteger score;
-@property (nonatomic, readwrite) NSString *currentMatchState;
+@property (nonatomic, readwrite) NSMutableString *currentMatchState;
 @property (nonatomic, strong) NSMutableArray *cards;
 @property (nonatomic, strong) NSMutableArray *chosenCards;
 @property (nonatomic) int matchLimit;
@@ -25,9 +25,9 @@ static const int DEFAULT_MATCH_LIMIT = 2;
 @implementation PlayingCardGame
 @synthesize matchLimit = _matchLimit; // because custom setter and getter
 
-- (NSString *)currentMatchState
+- (NSMutableString *)currentMatchState
 {
-    if(!_currentMatchState) _currentMatchState = @"";
+    if(!_currentMatchState) _currentMatchState = [NSMutableString stringWithString:@""];
     return _currentMatchState;
 }
 
@@ -87,23 +87,36 @@ static const int DEFAULT_MATCH_LIMIT = 2;
             int matchScore = [cardToCompareWith match:@[firstCard]];
             // match if score isn't nil
             if (matchScore) {
+                [self updateCurrentMatchState:[NSString stringWithFormat:@"%d", matchScore * MATCH_BONUS]];
                 self.score += matchScore * MATCH_BONUS;
             } else {
+                [self updateCurrentMatchState:[NSString stringWithFormat:@"%d", MISMATCH_PENALTY]];
                 self.score -= MISMATCH_PENALTY;
             }
         }
     }
 }
 
+-(void)updateCurrentMatchState:(NSString *)stringToAdd
+{
+    [self.currentMatchState appendString:stringToAdd];
+    [self.currentMatchState appendString:@" "];
+}
+
+-(void)resetCurrentMatchState
+{
+    [self.currentMatchState setString:@""];
+}
+
 - (void)matchChosenCards
 {
     
     NSUInteger count = [self.chosenCards count] - 1;
+    
     if(count == self.matchLimit -1) {
         
         bool isMatched = YES;
         Card *firstCard = [self.chosenCards objectAtIndex:0];
-        NSMutableString *str = [NSMutableString stringWithString:@""];
         
         for (NSUInteger i = 1; i <= count; i++) {
             
@@ -119,27 +132,20 @@ static const int DEFAULT_MATCH_LIMIT = 2;
         
         
         if(!isMatched) {
-            // remove all cards bar first choice
+            
+            // mark all cards unmatched
             for(Card *card in self.chosenCards) {
                 card.matched = NO;
-                [str appendString:card.contents];
-                [str appendString:@" "];
             }
-            
-            [str appendString:@"did not match 😔"];
             
         } else {
+            // mark all cards matched
+            // remove from chosen cards
             for(Card *card in self.chosenCards) {
                 card.matched = YES;
-                [str appendString:card.contents];
-                [str appendString:@" "];
             }
-            
-            [str appendString:@" matched 😀"];
             [self.chosenCards removeAllObjects];
         }
-        
-        self.currentMatchState = str;
     }
 }
 
@@ -158,8 +164,15 @@ static const int DEFAULT_MATCH_LIMIT = 2;
         } else {
             // add to list of chosen cards
             
-            
             if([self.chosenCards count] < self.matchLimit) {
+                
+                if([self.chosenCards count] == 0) {
+                    // reset match state
+                    [self resetCurrentMatchState];
+                }
+                
+                [self updateCurrentMatchState:card.contents];
+                
                 self.score -= COST_TO_CHOOSE;
                 card.chosen = YES;
             

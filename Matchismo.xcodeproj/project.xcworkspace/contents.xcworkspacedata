@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../Matchismo/PlayCardGameViewController.h">
+   </FileRef>
+   <FileRef
+      location = "group:../Matchismo/PlayCardGameViewController.m">
+   </FileRef>
+   <FileRef
       location = "self:Matchismo.xcodeproj">
    </FileRef>
 </Workspace>
