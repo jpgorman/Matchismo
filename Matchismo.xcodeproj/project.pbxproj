@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B808167E1D99AE9E00A30316 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B808167D1D99AE9E00A30316 /* SetViewController.m */; };
 		B8A323B01D63B89D00A8817C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A323AF1D63B89D00A8817C /* main.m */; };
 		B8A323B31D63B89D00A8817C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A323B21D63B89D00A8817C /* AppDelegate.m */; };
 		B8A323B61D63B89D00A8817C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A323B51D63B89D00A8817C /* ViewController.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B808167C1D99AE9E00A30316 /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
+		B808167D1D99AE9E00A30316 /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
 		B8A323AA1D63B89D00A8817C /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A323AE1D63B89D00A8817C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8A323AF1D63B89D00A8817C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 		B8A323AC1D63B89D00A8817C /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
+				B808167C1D99AE9E00A30316 /* SetViewController.h */,
+				B808167D1D99AE9E00A30316 /* SetViewController.m */,
 				B8BFC89E1D87011C0089BCCD /* PlayCardGameViewController.h */,
 				B8BFC89F1D87011C0089BCCD /* PlayCardGameViewController.m */,
 				B8A323D31D63D05800A8817C /* Models */,
@@ -260,6 +265,7 @@
 				B8A323E21D665E9900A8817C /* PlayingCard.m in Sources */,
 				B8A323DF1D665C1900A8817C /* Card.m in Sources */,
 				B8A323DC1D66598900A8817C /* Deck.m in Sources */,
+				B808167E1D99AE9E00A30316 /* SetViewController.m in Sources */,
 				B8BFC8A01D87011C0089BCCD /* PlayCardGameViewController.m in Sources */,
 				B8A323B61D63B89D00A8817C /* ViewController.m in Sources */,
 				B8A323E91D74C73100A8817C /* PlayingCardGame.m in Sources */,
