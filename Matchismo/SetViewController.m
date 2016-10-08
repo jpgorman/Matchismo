@@ -7,24 +7,26 @@
 //
 
 #import "SetViewController.h"
+#import "SetCard.h"
+#import "SetDeck.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface SetViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *SetViewTitle;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 
 @end
 
 @implementation SetViewController
 
-- (void)setThingToPass:(NSString *)thingToPass
+
+- (Deck *) createDeck
 {
-    _thingToPass = thingToPass;
-    // update ui when infocus
     if (self.view.window) [self updateUI];
+    return [[SetDeck alloc] init];
 }
 
-- (void)viewDidLoad
-{
-    self.thingToPass = @"New thing";
+- (void)viewDidLoad {
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -33,9 +35,77 @@
     [self updateUI];
 }
 
+#define SHADING_ALPHA 0.3
+
+- (UIColor *)getColor:(NSString *)clr withShading:(NSUInteger)shading
+{
+    UIColor *color = [UIColor whiteColor];
+    if([clr isEqualToString:@"Red"]) color = [UIColor redColor];
+    if([clr isEqualToString:@"Green"]) color = [UIColor greenColor];
+    if([clr isEqualToString:@"Purple"]) color = [UIColor purpleColor];
+    
+    if(shading == 0) color = [color colorWithAlphaComponent:0];
+    if(shading == 1) color = [color colorWithAlphaComponent:SHADING_ALPHA];
+    if(shading == 2) color = [color colorWithAlphaComponent:1];
+    
+    return color;
+}
+
+#define STROKE_WIDTH @-5
+
+- (NSAttributedString *)getAttributedStringForCard:(SetCard *)card
+{
+    // wrtie number of symbols
+    NSString *symbol = [[NSString alloc] init];
+    for (int i = 0; i < card.number; i++) {
+        symbol = [NSString stringWithFormat:@"%@%@", symbol, card.symbol];
+    }
+    
+    
+     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:symbol];
+    
+    
+    NSDictionary *attributes = @{
+                                 NSStrokeColorAttributeName: [self getColor:card.color withShading:2],
+                                 NSStrokeWidthAttributeName: STROKE_WIDTH,
+                                 NSForegroundColorAttributeName: [self getColor:card.color withShading:card.shading]
+                                 };
+    
+    NSRange range = NSMakeRange(0, attString.length);
+    [attString setAttributes:attributes range:range];
+    
+    return attString;
+}
+
+- (IBAction)handleButtonEvent:(UIButton *)sender {
+    
+    NSInteger cardIndex = [self.cardButtons indexOfObject:sender];
+    [self.game chooseCardAtIndex:cardIndex withLimit:3];
+    [self updateUI];
+}
+
 - (void)updateUI
 {
-    // self.SetViewTitle.text = self.thingToPass;
+    [super updateUI];
+    for(UIButton *cardButton in self.cardButtons){
+        NSUInteger cardIndex = [self.cardButtons indexOfObject:cardButton];
+        SetCard *card = (SetCard *)[self.game cardAtIndex:cardIndex];
+        
+        NSAttributedString *attString = [self getAttributedStringForCard:card];
+        [cardButton setAttributedTitle:attString forState:UIControlStateNormal];
+        [cardButton setBackgroundImage:nil forState:UIControlStateNormal];
+        [[cardButton layer] setBorderWidth:1.0f];
+        [[cardButton layer] setCornerRadius:5.0f];
+        [[cardButton layer] setBorderColor:[UIColor lightGrayColor].CGColor];
+        
+        if(card.isChosen) {
+            [cardButton setBackgroundColor:[UIColor lightGrayColor]];
+        } else {
+            [cardButton setBackgroundColor:[UIColor whiteColor]];
+        }
+        
+        
+    }
 }
 
 @end

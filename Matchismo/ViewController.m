@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *matchingLimitLabel;
 @property (weak, nonatomic) IBOutlet UILabel *chosenLabel;
 @property (nonatomic) Deck *deck;
-@property (nonatomic, strong) PlayingCardGame *game;
 @property (weak, nonatomic) IBOutlet UISwitch *toggleNumber;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @end

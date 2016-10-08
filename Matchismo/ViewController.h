@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "Deck.h"
+#import "PlayingCardGame.h"
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) PlayingCardGame *game;
+@property (nonatomic) NSUInteger cardCount;
+@property (nonatomic) NSUInteger cardsToMatch;
+
 - (Deck *)createDeck; // abstract
+- (void)updateUI; // abstract
 
 @end
 
