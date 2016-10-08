@@ -21,6 +21,8 @@
 		B8A323E51D66635900A8817C /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A323E41D66635900A8817C /* PlayingCardDeck.m */; };
 		B8A323E91D74C73100A8817C /* PlayingCardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A323E81D74C73100A8817C /* PlayingCardGame.m */; };
 		B8BFC8A01D87011C0089BCCD /* PlayCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8BFC89F1D87011C0089BCCD /* PlayCardGameViewController.m */; };
+		B8F5F85A1DA968A50093B53E /* SetCard.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F5F8591DA968A50093B53E /* SetCard.m */; };
+		B8F5F85D1DA96B6A0093B53E /* SetDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F5F85C1DA96B6A0093B53E /* SetDeck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,10 @@
 		B8A323E81D74C73100A8817C /* PlayingCardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardGame.m; sourceTree = "<group>"; };
 		B8BFC89E1D87011C0089BCCD /* PlayCardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayCardGameViewController.h; sourceTree = "<group>"; };
 		B8BFC89F1D87011C0089BCCD /* PlayCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayCardGameViewController.m; sourceTree = "<group>"; };
+		B8F5F8581DA968A50093B53E /* SetCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCard.h; sourceTree = "<group>"; };
+		B8F5F8591DA968A50093B53E /* SetCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCard.m; sourceTree = "<group>"; };
+		B8F5F85B1DA96B6A0093B53E /* SetDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDeck.h; sourceTree = "<group>"; };
+		B8F5F85C1DA96B6A0093B53E /* SetDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDeck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,10 @@
 				B8A323DE1D665C1900A8817C /* Card.m */,
 				B8A323DA1D66598900A8817C /* Deck.m */,
 				B8A323DB1D66598900A8817C /* Deck.h */,
+				B8F5F8581DA968A50093B53E /* SetCard.h */,
+				B8F5F8591DA968A50093B53E /* SetCard.m */,
+				B8F5F85B1DA96B6A0093B53E /* SetDeck.h */,
+				B8F5F85C1DA96B6A0093B53E /* SetDeck.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -206,14 +216,16 @@
 		B8A323A21D63B89D00A8817C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Jean-Paul Gorman";
 				TargetAttributes = {
 					B8A323A91D63B89D00A8817C = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = FV28QZD24C;
 					};
 					B8A323C21D63B89E00A8817C = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = FV28QZD24C;
 						TestTargetID = B8A323A91D63B89D00A8817C;
 					};
 				};
@@ -267,11 +279,13 @@
 				B8A323DC1D66598900A8817C /* Deck.m in Sources */,
 				B808167E1D99AE9E00A30316 /* SetViewController.m in Sources */,
 				B8BFC8A01D87011C0089BCCD /* PlayCardGameViewController.m in Sources */,
+				B8F5F85A1DA968A50093B53E /* SetCard.m in Sources */,
 				B8A323B61D63B89D00A8817C /* ViewController.m in Sources */,
 				B8A323E91D74C73100A8817C /* PlayingCardGame.m in Sources */,
 				B8A323E51D66635900A8817C /* PlayingCardDeck.m in Sources */,
 				B8A323B31D63B89D00A8817C /* AppDelegate.m in Sources */,
 				B8A323B01D63B89D00A8817C /* main.m in Sources */,
+				B8F5F85D1DA96B6A0093B53E /* SetDeck.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,14 +340,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -349,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -369,8 +386,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -386,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -397,8 +416,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FV28QZD24C;
 				INFOPLIST_FILE = Matchismo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gorman.g.p.j.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -407,8 +428,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FV28QZD24C;
 				INFOPLIST_FILE = Matchismo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gorman.g.p.j.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -417,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FV28QZD24C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -427,6 +451,7 @@
 				);
 				INFOPLIST_FILE = MatchismoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gorman.g.p.j.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Matchismo.app/Matchismo";
 			};
@@ -436,12 +461,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FV28QZD24C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MatchismoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gorman.g.p.j.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Matchismo.app/Matchismo";
 			};
