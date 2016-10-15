@@ -44,14 +44,14 @@
     if([clr isEqualToString:@"Green"]) color = [UIColor greenColor];
     if([clr isEqualToString:@"Purple"]) color = [UIColor purpleColor];
     
-    if(shading == 0) color = [color colorWithAlphaComponent:0];
-    if(shading == 1) color = [color colorWithAlphaComponent:SHADING_ALPHA];
-    if(shading == 2) color = [color colorWithAlphaComponent:1];
-    
+    if(shading == 1) color = [color colorWithAlphaComponent:0];
+    if(shading == 2) color = [color colorWithAlphaComponent:SHADING_ALPHA];
+    if(shading == 3) color = [color colorWithAlphaComponent:1];
+    NSLog(@"%d", shading);
     return color;
 }
 
-#define STROKE_WIDTH @-5
+#define STROKE_WIDTH @-9
 
 - (NSAttributedString *)getAttributedStringForCard:(SetCard *)card
 {
