@@ -18,7 +18,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"Set Game"]) {
+    if ([segue.identifier isEqualToString:@"Set"]) {
         if([segue.destinationViewController isKindOfClass:[SetViewController class]]) {
             SetViewController *svc = (SetViewController *)segue.destinationViewController;
             svc.thingToPass = @"thing to pass";

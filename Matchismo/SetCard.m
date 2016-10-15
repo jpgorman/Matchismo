@@ -33,8 +33,8 @@
     
     if (((numbers.count == 1) || (numbers.count == 3)) &&
         ((symbols.count == 1) || (symbols.count == 3)) &&
-        ((shadings.count == 1) || (shadings.count == 3)) &&
         ((colors.count == 1) || (colors.count == 3))) score = MATCH_POINTS;
+    
     
     return score;
 }

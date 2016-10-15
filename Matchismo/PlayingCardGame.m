@@ -75,24 +75,20 @@ static const int DEFAULT_MATCH_LIMIT = 2;
 
 - (void)getScores
 {
-    
     NSUInteger count = [self.chosenCards count] - 1;
     
     if(count == self.matchLimit - 1) {
 
         Card *firstCard = [self.chosenCards objectAtIndex:0];
         
-        for (NSUInteger i = 1; i <= count; i++) {
-            Card *cardToCompareWith = [self.chosenCards objectAtIndex:i];
-            int matchScore = [cardToCompareWith match:@[firstCard]];
-            // match if score isn't nil
-            if (matchScore) {
-                [self updateCurrentMatchState:[NSString stringWithFormat:@"%d", matchScore * MATCH_BONUS]];
-                self.score += matchScore * MATCH_BONUS;
-            } else {
-                [self updateCurrentMatchState:[NSString stringWithFormat:@"%d", MISMATCH_PENALTY]];
-                self.score -= MISMATCH_PENALTY;
-            }
+        int matchScore = [firstCard match:self.chosenCards];
+        // match if score isn't nil
+        if (matchScore) {
+            [self updateCurrentMatchState:[NSString stringWithFormat:@"%d", matchScore * MATCH_BONUS]];
+            self.score += matchScore * MATCH_BONUS;
+        } else {
+            [self updateCurrentMatchState:[NSString stringWithFormat:@"%d", MISMATCH_PENALTY]];
+            self.score -= MISMATCH_PENALTY;
         }
     }
 }
@@ -118,16 +114,11 @@ static const int DEFAULT_MATCH_LIMIT = 2;
         bool isMatched = YES;
         Card *firstCard = [self.chosenCards objectAtIndex:0];
         
-        for (NSUInteger i = 1; i <= count; i++) {
-            
-            Card *cardToCompareWith = [self.chosenCards objectAtIndex:i];
-            int matchScore = [cardToCompareWith match:@[firstCard]];
-            // if no match then break
-            if (!matchScore) {
-                isMatched = NO;
-                break;
-            }
-
+        int matchScore = [firstCard match:self.chosenCards];
+        
+        // if no match then break
+        if (!matchScore) {
+            isMatched = NO;
         }
         
         

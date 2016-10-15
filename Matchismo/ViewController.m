@@ -74,7 +74,7 @@ static const int MAX_MATCH_LIMIT = 3;
         NSUInteger cardIndex = [self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:cardIndex];
         [cardButton setTitle:[self titleForCard:card]
-                    forState:UIControlStateNormal];
+                    forState:UIControlStateNormal]; 
         [cardButton setBackgroundImage:[self backgroundImageForCard:card]
                               forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
