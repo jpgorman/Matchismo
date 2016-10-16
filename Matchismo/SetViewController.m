@@ -17,7 +17,7 @@
 @end
 
 @implementation SetViewController
-
+@dynamic cardButtons;
 
 - (Deck *) createDeck
 {
@@ -62,7 +62,7 @@
     }
     
     
-     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:symbol];
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:symbol];
     
     
     NSDictionary *attributes = @{
@@ -77,10 +77,12 @@
     return attString;
 }
 
+#define CARD_LIMIT 3
+
 - (IBAction)handleButtonEvent:(UIButton *)sender {
     
     NSInteger cardIndex = [self.cardButtons indexOfObject:sender];
-    [self.game chooseCardAtIndex:cardIndex withLimit:3];
+    [self.game chooseCardAtIndex:cardIndex withLimit:CARD_LIMIT];
     [self updateUI];
 }
 
@@ -92,24 +94,13 @@
         SetCard *card = (SetCard *)[self.game cardAtIndex:cardIndex];
         
         NSAttributedString *attString = [self getAttributedStringForCard:card];
+        [cardButton setBackgroundImage:nil
+                              forState:UIControlStateNormal];
+        
         [cardButton setAttributedTitle:attString forState:UIControlStateNormal];
-        [cardButton setBackgroundImage:nil forState:UIControlStateNormal];
-        
-        // card border radius
-        [[cardButton layer] setBorderWidth:1.0f];
-        [[cardButton layer] setCornerRadius:5.0f];
-        [[cardButton layer] setBorderColor:[UIColor lightGrayColor].CGColor];
-        
-        if(card.isChosen) {
-            [cardButton setBackgroundColor:[UIColor colorWithRed:0.60 green:0.60 blue:0.60 alpha:0.9]];
-        } else {
-            [cardButton setBackgroundColor:[UIColor whiteColor]];
-        }
-        
-        if(card.isMatched) [cardButton setBackgroundColor:[UIColor colorWithRed:0.60 green:0.60 blue:0.60 alpha:0.2]];
-        
         
     }
+    
 }
 
 @end

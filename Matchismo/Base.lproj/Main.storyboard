@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Y9o-Ko-FaW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -128,30 +129,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Cg-Cc-LLW">
-                                <frame key="frameInset" minX="11" minY="496" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="handleToggleEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Kom-dh-DkQ"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Matching: 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwn-Wi-Xk8">
-                                <frame key="frameInset" minX="77" minY="496" width="91" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0v-Cv-tvc">
-                                <frame key="frameInset" minX="11" minY="547" width="157" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Currently Chosen: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3r-94-FeG">
-                                <frame key="frameInset" minX="16" minY="467" width="143" height="21"/>
+                                <frame key="frameInset" minX="16" minY="556" width="143" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33n-p2-i9v">
+                                <state key="normal" title="Deal"/>
+                                <connections>
+                                    <action selector="deal" destination="vXZ-lx-hvc" eventType="touchUpInside" id="r4w-M0-7kd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0v-Cv-tvc">
+                                <frame key="frameInset" minX="23" minY="580" width="157" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -164,8 +156,12 @@
                             <constraint firstAttribute="trailing" secondItem="XPU-T5-4UT" secondAttribute="trailing" constant="20" symbolic="YES" id="EBc-8j-m82"/>
                             <constraint firstItem="Agb-kJ-cDe" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="GmB-YV-zXQ"/>
                             <constraint firstAttribute="trailing" secondItem="Agb-kJ-cDe" secondAttribute="trailing" constant="20" symbolic="YES" id="K4E-TX-Bjf"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="j0v-Cv-tvc" secondAttribute="bottom" constant="8" symbolic="YES" id="Kze-9e-VH2"/>
                             <constraint firstItem="XPU-T5-4UT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="O0K-tw-Hv1"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="33n-p2-i9v" secondAttribute="bottom" constant="8" symbolic="YES" id="VwK-kd-WlY"/>
+                            <constraint firstItem="j0v-Cv-tvc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="7" id="akK-oH-yx6"/>
                             <constraint firstItem="XPU-T5-4UT" firstAttribute="top" secondItem="Agb-kJ-cDe" secondAttribute="bottom" constant="8" symbolic="YES" id="avx-6P-C33"/>
+                            <constraint firstItem="33n-p2-i9v" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="eB2-kP-4PV"/>
                             <constraint firstItem="9EX-1P-bc9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="fHU-nl-cco"/>
                             <constraint firstItem="Agb-kJ-cDe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="heG-95-sZW"/>
                         </constraints>
@@ -179,9 +175,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="chosenLabel" destination="n3r-94-FeG" id="nq1-zW-QRp"/>
-                        <outlet property="matchingLimitLabel" destination="hwn-Wi-Xk8" id="OF7-SY-nts"/>
                         <outlet property="scoreLabel" destination="j0v-Cv-tvc" id="jEq-UZ-bJq"/>
-                        <outlet property="toggleNumber" destination="4Cg-Cc-LLW" id="wmg-2S-q88"/>
                         <outletCollection property="cardButtons" destination="9l7-gq-66Q" id="HH1-Mj-rSE"/>
                         <outletCollection property="cardButtons" destination="H3V-bR-AjA" id="e7W-XF-z6O"/>
                         <outletCollection property="cardButtons" destination="AAa-Au-0bE" id="4D8-y6-JrQ"/>
@@ -220,6 +214,7 @@
                                             <constraint firstAttribute="width" constant="64" id="3Ec-ka-XKC"/>
                                             <constraint firstAttribute="height" constant="96" id="HD7-69-4lT"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="ZEp-Sl-dA1"/>
                                         </connections>
@@ -229,6 +224,7 @@
                                             <constraint firstAttribute="height" constant="96" id="ZCX-P9-h5F"/>
                                             <constraint firstAttribute="width" constant="64" id="w51-7M-7UJ"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="srJ-MY-2mJ"/>
                                         </connections>
@@ -238,6 +234,7 @@
                                             <constraint firstAttribute="width" constant="64" id="VeQ-zo-pqL"/>
                                             <constraint firstAttribute="height" constant="96" id="kmk-OW-VIv"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="Tsl-Kn-iWc"/>
                                         </connections>
@@ -247,6 +244,7 @@
                                             <constraint firstAttribute="height" constant="96" id="I2y-s1-PgT"/>
                                             <constraint firstAttribute="width" constant="64" id="YKR-el-qK0"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="WyI-I2-ZNg"/>
                                         </connections>
@@ -261,6 +259,7 @@
                                             <constraint firstAttribute="width" constant="64" id="czu-MI-JHL"/>
                                             <constraint firstAttribute="height" constant="96" id="lF6-15-HNa"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="GiI-Wf-b5h"/>
                                         </connections>
@@ -270,6 +269,7 @@
                                             <constraint firstAttribute="width" constant="64" id="Wan-QH-iMI"/>
                                             <constraint firstAttribute="height" constant="96" id="zlo-7Z-b5W"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="1Yz-yL-4qh"/>
                                         </connections>
@@ -279,6 +279,7 @@
                                             <constraint firstAttribute="width" constant="64" id="0TX-VX-9Yr"/>
                                             <constraint firstAttribute="height" constant="96" id="H4c-UC-QAV"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="hPV-fi-kzu"/>
                                         </connections>
@@ -288,6 +289,7 @@
                                             <constraint firstAttribute="width" constant="64" id="0cN-Wh-r4H"/>
                                             <constraint firstAttribute="height" constant="96" id="EF0-Gw-aHv"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="xKD-Va-Ffu"/>
                                         </connections>
@@ -302,6 +304,7 @@
                                             <constraint firstAttribute="width" constant="64" id="1CC-7N-WlC"/>
                                             <constraint firstAttribute="height" constant="96" id="i45-dg-dBi"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="et1-A5-mlA"/>
                                         </connections>
@@ -311,6 +314,7 @@
                                             <constraint firstAttribute="width" constant="64" id="8qM-OI-Fp2"/>
                                             <constraint firstAttribute="height" constant="96" id="x7w-5k-UfX"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="YDp-Sh-Gmq"/>
                                         </connections>
@@ -320,6 +324,7 @@
                                             <constraint firstAttribute="height" constant="96" id="awV-qD-4MX"/>
                                             <constraint firstAttribute="width" constant="64" id="hTs-eb-8bJ"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="uQ9-Uw-xlA"/>
                                         </connections>
@@ -329,6 +334,7 @@
                                             <constraint firstAttribute="height" constant="96" id="GTi-Xa-FXm"/>
                                             <constraint firstAttribute="width" constant="64" id="vkW-68-ojX"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="jym-QH-ep0"/>
                                         </connections>
@@ -343,6 +349,7 @@
                                             <constraint firstAttribute="height" constant="96" id="06b-j6-C1M"/>
                                             <constraint firstAttribute="width" constant="64" id="wIn-H7-bpw"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="1lV-U1-PFQ"/>
                                         </connections>
@@ -352,6 +359,7 @@
                                             <constraint firstAttribute="height" constant="96" id="YJf-5v-oNz"/>
                                             <constraint firstAttribute="width" constant="64" id="gxr-K9-EG1"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="dWK-R5-kc2"/>
                                         </connections>
@@ -361,6 +369,7 @@
                                             <constraint firstAttribute="height" constant="96" id="KhB-ij-EEe"/>
                                             <constraint firstAttribute="width" constant="64" id="UcV-32-eRa"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="cL5-jS-wmZ"/>
                                         </connections>
@@ -370,6 +379,7 @@
                                             <constraint firstAttribute="height" constant="96" id="o9t-Yn-ZbV"/>
                                             <constraint firstAttribute="width" constant="64" id="yDY-gE-TEw"/>
                                         </constraints>
+                                        <state key="normal" backgroundImage="back"/>
                                         <connections>
                                             <action selector="handleButtonEvent:" destination="nII-v0-d5d" eventType="touchUpInside" id="1u6-ub-GDd"/>
                                         </connections>
