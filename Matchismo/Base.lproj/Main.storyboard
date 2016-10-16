@@ -139,7 +139,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33n-p2-i9v">
                                 <state key="normal" title="Deal"/>
                                 <connections>
-                                    <action selector="deal" destination="vXZ-lx-hvc" eventType="touchUpInside" id="r4w-M0-7kd"/>
+                                    <action selector="deal:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="H2B-hJ-wO0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0v-Cv-tvc">
@@ -386,6 +386,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEr-nN-8Kj">
+                                <frame key="frameInset" minX="16" minY="589" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iyv-L7-BiW">
+                                <frame key="frameInset" minX="321" minY="584" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Deal"/>
+                                <connections>
+                                    <action selector="deal:" destination="nII-v0-d5d" eventType="touchUpInside" id="BkJ-1a-geO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -404,6 +419,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="scoreLabel" destination="bEr-nN-8Kj" id="GYx-uy-DDX"/>
                         <outletCollection property="cardButtons" destination="uG0-GP-VPt" id="N5Z-1s-oOe"/>
                         <outletCollection property="cardButtons" destination="a5G-1a-l6m" id="FlY-AK-ZzR"/>
                         <outletCollection property="cardButtons" destination="kEo-Vy-gQi" id="Pa8-7V-NDi"/>
@@ -424,7 +440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05L-Ir-JAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2260" y="267"/>
+            <point key="canvasLocation" x="2260" y="266.71664167916043"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="imT-R6-DTF">

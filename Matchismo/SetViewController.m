@@ -21,7 +21,6 @@
 
 - (Deck *) createDeck
 {
-    if (self.view.window) [self updateUI];
     return [[SetDeck alloc] init];
 }
 
@@ -47,7 +46,6 @@
     if(shading == 1) color = [color colorWithAlphaComponent:0];
     if(shading == 2) color = [color colorWithAlphaComponent:SHADING_ALPHA];
     if(shading == 3) color = [color colorWithAlphaComponent:1];
-    NSLog(@"%d", shading);
     return color;
 }
 

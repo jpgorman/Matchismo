@@ -83,8 +83,7 @@ static const int MAX_MATCH_LIMIT = 3;
     self.chosenLabel.text = [NSString stringWithFormat:@"Currently Chosen: %@", self.game.currentMatchState];
 }
 
-- (IBAction)deal
-{
+- (IBAction)deal:(UIButton *)sender {
     self.game = nil;
     self.chosenLabel.text = @"";
     self.scoreLabel.text = @"";
