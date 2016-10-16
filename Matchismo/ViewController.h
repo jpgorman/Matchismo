@@ -19,6 +19,7 @@
 
 - (Deck *)createDeck; // abstract
 - (void)updateUI; // abstract
+- (void)viewWillAppear:(BOOL)animated; // abstract
 
 @end
 

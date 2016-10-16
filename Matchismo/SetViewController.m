@@ -24,16 +24,6 @@
     return [[SetDeck alloc] init];
 }
 
-- (void)viewDidLoad {
-
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self updateUI];
-}
-
 #define SHADING_ALPHA 0.3
 
 - (UIColor *)getColor:(NSString *)clr withShading:(NSUInteger)shading

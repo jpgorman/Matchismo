@@ -23,6 +23,12 @@ static const int MAX_MATCH_LIMIT = 3;
 
 @implementation ViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self updateUI];
+}
+
 - (BOOL)isMatchingMax
 {
     if(!_isMatchingMax) _isMatchingMax = MATCHING_MAX;
@@ -84,6 +90,32 @@ static const int MAX_MATCH_LIMIT = 3;
 }
 
 - (IBAction)deal:(UIButton *)sender {
+    
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Confirmation"
+                                 message:@"Do you want to reset game?"
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"Yes, please"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action) {
+                                    [self startNewGame];
+                                }];
+    
+    UIAlertAction* noButton = [UIAlertAction
+                               actionWithTitle:@"No, thanks"
+                               style:UIAlertActionStyleDefault
+                               handler:nil];
+    
+    [alert addAction:yesButton];
+    [alert addAction:noButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)startNewGame
+{
     self.game = nil;
     self.chosenLabel.text = @"";
     self.scoreLabel.text = @"";

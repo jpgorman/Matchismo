@@ -129,13 +129,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Currently Chosen: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3r-94-FeG">
-                                <frame key="frameInset" minX="16" minY="556" width="143" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33n-p2-i9v">
                                 <state key="normal" title="Deal"/>
                                 <connections>
@@ -145,11 +138,11 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0v-Cv-tvc">
                                 <frame key="frameInset" minX="23" minY="580" width="157" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9EX-1P-bc9" firstAttribute="top" secondItem="XPU-T5-4UT" secondAttribute="bottom" constant="8" symbolic="YES" id="5cV-vh-qKr"/>
                             <constraint firstAttribute="trailing" secondItem="9EX-1P-bc9" secondAttribute="trailing" constant="20" symbolic="YES" id="9Lq-W3-Uqw"/>
@@ -174,7 +167,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="chosenLabel" destination="n3r-94-FeG" id="nq1-zW-QRp"/>
                         <outlet property="scoreLabel" destination="j0v-Cv-tvc" id="jEq-UZ-bJq"/>
                         <outletCollection property="cardButtons" destination="9l7-gq-66Q" id="HH1-Mj-rSE"/>
                         <outletCollection property="cardButtons" destination="H3V-bR-AjA" id="e7W-XF-z6O"/>
@@ -206,8 +198,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="P97-K2-VLc">
-                                <frame key="frameInset" minX="16" minY="72" width="335" height="96"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="P97-K2-VLc">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uG0-GP-VPt">
                                         <constraints>
@@ -251,8 +242,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="sbj-Uh-IoH">
-                                <frame key="frameInset" minX="16" minY="176" width="335" height="96"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="sbj-Uh-IoH">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KO-Yj-rfR">
                                         <constraints>
@@ -296,8 +286,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="QO6-fs-Ume">
-                                <frame key="frameInset" minX="16" minY="280" width="335" height="96"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="QO6-fs-Ume">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npx-8Y-4Br">
                                         <constraints>
@@ -341,8 +330,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="EeR-qu-kEe">
-                                <frame key="frameInset" minX="16" minY="384" width="335" height="96"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="EeR-qu-kEe">
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpM-jm-7eG">
                                         <constraints>
@@ -386,16 +374,12 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEr-nN-8Kj">
-                                <frame key="frameInset" minX="16" minY="589" width="164" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEr-nN-8Kj">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iyv-L7-BiW">
-                                <frame key="frameInset" minX="321" minY="584" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iyv-L7-BiW">
                                 <state key="normal" title="Deal"/>
                                 <connections>
                                     <action selector="deal:" destination="nII-v0-d5d" eventType="touchUpInside" id="BkJ-1a-geO"/>
@@ -404,18 +388,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="EeR-qu-kEe" firstAttribute="leading" secondItem="eeX-rf-QuW" secondAttribute="leading" constant="20" symbolic="YES" id="3at-KK-DgI"/>
+                            <constraint firstItem="EeR-qu-kEe" firstAttribute="leading" secondItem="eeX-rf-QuW" secondAttribute="leading" constant="16" id="3at-KK-DgI"/>
+                            <constraint firstItem="Iyv-L7-BiW" firstAttribute="trailing" secondItem="EeR-qu-kEe" secondAttribute="trailing" id="Bfa-N5-Ewa"/>
                             <constraint firstItem="sbj-Uh-IoH" firstAttribute="top" secondItem="P97-K2-VLc" secondAttribute="bottom" constant="8" id="F9a-a3-o5g"/>
-                            <constraint firstAttribute="trailing" secondItem="P97-K2-VLc" secondAttribute="trailing" constant="20" symbolic="YES" id="Iid-cT-oK3"/>
-                            <constraint firstAttribute="trailing" secondItem="sbj-Uh-IoH" secondAttribute="trailing" constant="20" symbolic="YES" id="Pax-cx-mZ8"/>
+                            <constraint firstAttribute="trailing" secondItem="P97-K2-VLc" secondAttribute="trailing" constant="24" id="Iid-cT-oK3"/>
+                            <constraint firstAttribute="trailing" secondItem="sbj-Uh-IoH" secondAttribute="trailing" constant="24" id="Pax-cx-mZ8"/>
                             <constraint firstItem="P97-K2-VLc" firstAttribute="top" secondItem="Q2E-zl-og4" secondAttribute="bottom" constant="8" symbolic="YES" id="SNO-9Z-jzN"/>
-                            <constraint firstItem="QO6-fs-Ume" firstAttribute="leading" secondItem="eeX-rf-QuW" secondAttribute="leading" constant="20" symbolic="YES" id="W5R-xg-yyR"/>
+                            <constraint firstItem="UYB-OH-RjF" firstAttribute="top" secondItem="bEr-nN-8Kj" secondAttribute="bottom" constant="8" symbolic="YES" id="UIM-J6-aB0"/>
+                            <constraint firstItem="QO6-fs-Ume" firstAttribute="leading" secondItem="eeX-rf-QuW" secondAttribute="leading" constant="16" id="W5R-xg-yyR"/>
                             <constraint firstItem="QO6-fs-Ume" firstAttribute="top" secondItem="sbj-Uh-IoH" secondAttribute="bottom" constant="8" id="cg9-JP-Na6"/>
                             <constraint firstItem="EeR-qu-kEe" firstAttribute="top" secondItem="QO6-fs-Ume" secondAttribute="bottom" constant="8" id="dnR-jX-xff"/>
-                            <constraint firstItem="sbj-Uh-IoH" firstAttribute="leading" secondItem="eeX-rf-QuW" secondAttribute="leading" constant="20" symbolic="YES" id="eWd-sU-jYi"/>
-                            <constraint firstAttribute="trailing" secondItem="QO6-fs-Ume" secondAttribute="trailing" constant="20" symbolic="YES" id="egN-6w-Aei"/>
-                            <constraint firstItem="P97-K2-VLc" firstAttribute="leading" secondItem="eeX-rf-QuW" secondAttribute="leading" constant="20" symbolic="YES" id="uAL-xg-88h"/>
-                            <constraint firstAttribute="trailing" secondItem="EeR-qu-kEe" secondAttribute="trailing" constant="20" symbolic="YES" id="ydO-Rf-s32"/>
+                            <constraint firstItem="sbj-Uh-IoH" firstAttribute="leading" secondItem="eeX-rf-QuW" secondAttribute="leading" constant="16" id="eWd-sU-jYi"/>
+                            <constraint firstAttribute="trailing" secondItem="QO6-fs-Ume" secondAttribute="trailing" constant="24" id="egN-6w-Aei"/>
+                            <constraint firstItem="Iyv-L7-BiW" firstAttribute="centerY" secondItem="bEr-nN-8Kj" secondAttribute="centerY" id="ohV-fy-azx"/>
+                            <constraint firstItem="P97-K2-VLc" firstAttribute="leading" secondItem="eeX-rf-QuW" secondAttribute="leading" constant="16" id="uAL-xg-88h"/>
+                            <constraint firstItem="bEr-nN-8Kj" firstAttribute="leading" secondItem="EeR-qu-kEe" secondAttribute="leading" id="vkV-jv-Dig"/>
+                            <constraint firstAttribute="trailing" secondItem="EeR-qu-kEe" secondAttribute="trailing" constant="24" id="ydO-Rf-s32"/>
                         </constraints>
                     </view>
                     <connections>
