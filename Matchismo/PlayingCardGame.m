@@ -177,6 +177,7 @@ static const int DEFAULT_MATCH_LIMIT = 2;
 
 - (Card *)cardAtIndex:(NSUInteger)index
 {
+    NSLog(@"%s%lu", "card count", (unsigned long)[self.cards count]);
     return (index < [self.cards count]) ? self.cards[index] : nil;
 }
 

@@ -15,7 +15,7 @@
 @property (strong, nonatomic) PlayingCardGame *game;
 @property (nonatomic) NSUInteger cardCount;
 @property (nonatomic) NSUInteger cardsToMatch;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (strong, nonatomic) NSArray *cardButtons;
 
 - (Deck *)createDeck; // abstract
 - (void)updateUI; // abstract

@@ -7,12 +7,15 @@
 //
 
 #import "PlayCardGameViewController.h"
+#import "PlayingCard.h"
+#import "PlayingCardView.h"
 #import "PlayingCardDeck.h"
 #import "SetViewController.h"
 
 @interface PlayCardGameViewController ()
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@end
+@property (strong, nonatomic) IBOutletCollection(PlayingCardView) NSArray *cardButtons;
+@end;
+
 
 @implementation PlayCardGameViewController
 @dynamic cardButtons;
@@ -33,31 +36,42 @@
 }
 
 
-
 #define CARD_LIMIT 2
 
-- (IBAction)handleButtonEvent:(UIButton *)sender {
-    
-    NSInteger cardIndex = [self.cardButtons indexOfObject:sender];
-    [self.game chooseCardAtIndex:cardIndex withLimit:CARD_LIMIT];
-    [self updateUI];
-}
 
-
-- (NSString *)titleForCard:(Card *)card
+- (void)tap:(UITapGestureRecognizer *)sender
 {
-    return card.isChosen ? card.contents : @"";
+    
+    if ((sender.state == UIGestureRecognizerStateEnded)) {
+        
+        if([sender.view isKindOfClass:[PlayingCardView class]])
+        {
+            NSUInteger index = [self.cardButtons indexOfObject:sender.view];
+            [self.game chooseCardAtIndex:index withLimit:CARD_LIMIT];
+            [self updateUI];
+        }
+    }
 }
 
 - (void)updateUI
 {
-    [super updateUI];
-    for (UIButton *cardButton in self.cardButtons) {
-        NSUInteger cardIndex = [self.cardButtons indexOfObject:cardButton];
-        Card *card = [self.game cardAtIndex:cardIndex];
-        [cardButton setTitle:[self titleForCard:card]
-                    forState:UIControlStateNormal];
+    for (PlayingCardView *playingCardView in self.cardButtons) {
+        
+        
+        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+        
+        
+        NSUInteger cardIndex = [self.cardButtons indexOfObject:playingCardView];
+        PlayingCard *playingcard = (PlayingCard *)[self.game cardAtIndex:cardIndex];
+        playingCardView.suit = playingcard.suit;
+        playingCardView.rank = playingcard.rank;
+        playingCardView.faceUp = playingcard.isChosen;
+        [playingCardView addGestureRecognizer:tapGestureRecognizer];
     }
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
 }
 
 @end

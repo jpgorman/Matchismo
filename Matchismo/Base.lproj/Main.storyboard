@@ -21,112 +21,100 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Agb-kJ-cDe">
                                 <frame key="frameInset" minX="16" minY="72" width="335" height="96"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9l7-gq-66Q">
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gA6-ow-SAb"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3V-bR-AjA">
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NOd-EX-Hvn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAa-Au-0bE">
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4ca-wa-JvH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyn-qk-Gv1">
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XcZ-6d-97l"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWv-0p-7IF" customClass="PlayingCardView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="Ozk-zr-VLp"/>
+                                            <constraint firstAttribute="height" constant="96" id="Vol-1P-759"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vic-gc-fkM" customClass="PlayingCardView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="A2n-9g-cKw"/>
+                                            <constraint firstAttribute="width" constant="64" id="cXk-Le-Cit"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c51-DL-6cD" customClass="PlayingCardView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="F79-wX-jRS"/>
+                                            <constraint firstAttribute="width" constant="64" id="sZ7-8A-qfR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pL0-eW-ztc" customClass="PlayingCardView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="mEP-Sv-xQr"/>
+                                            <constraint firstAttribute="width" constant="64" id="rrk-GU-bsz"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="XPU-T5-4UT">
                                 <frame key="frameInset" minX="16" minY="176" width="335" height="96"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4c3-BH-WBA">
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CUP-KF-HHG"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOY-gL-kXR">
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bpR-eh-lNb"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqX-xM-vXc">
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="T1u-Yr-vTD"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fr-ZI-wQA">
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VOm-dV-d5i"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRw-cG-mbC" customClass="PlayingCardView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="Ewa-no-s4t"/>
+                                            <constraint firstAttribute="width" constant="64" id="TtS-S7-ohm"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Gn-3f-LbV" customClass="PlayingCardView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="Wew-XX-TRe"/>
+                                            <constraint firstAttribute="width" constant="64" id="qZh-eA-8Fo"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgT-W8-Ici" customClass="PlayingCardView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="1kY-Qs-lpS"/>
+                                            <constraint firstAttribute="width" constant="64" id="slI-jX-SVz"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4p-yt-qrD" customClass="PlayingCardView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="0qt-Q3-8Jc"/>
+                                            <constraint firstAttribute="height" constant="96" id="2kK-D6-cfo"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9EX-1P-bc9">
                                 <frame key="frameInset" minX="16" minY="280" width="335" height="96"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK6-nL-XEr">
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jc6-DT-YRQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUb-81-p9F">
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="e45-91-UKZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOu-zc-p3y">
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IOa-ij-yVn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBz-4o-eKE">
-                                        <state key="normal" backgroundImage="back">
-                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="handleButtonEvent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5eB-TF-1GZ"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8HN-pV-ZK3" customClass="PlayingCardView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="Xr9-aF-lbm"/>
+                                            <constraint firstAttribute="width" constant="64" id="xCT-Lv-7h0"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAP-Xo-WlL" customClass="PlayingCardView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="Msn-He-W8v"/>
+                                            <constraint firstAttribute="height" constant="96" id="THC-Ea-APO"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GrI-6S-pyT" customClass="PlayingCardView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="J6z-A4-Api"/>
+                                            <constraint firstAttribute="width" constant="64" id="Kej-rl-MMe"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1X0-FV-Q7t" customClass="PlayingCardView">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="C5d-wA-His"/>
+                                            <constraint firstAttribute="height" constant="96" id="Ehm-zQ-2Y9"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33n-p2-i9v">
@@ -168,23 +156,23 @@
                     </navigationItem>
                     <connections>
                         <outlet property="scoreLabel" destination="j0v-Cv-tvc" id="jEq-UZ-bJq"/>
-                        <outletCollection property="cardButtons" destination="9l7-gq-66Q" id="HH1-Mj-rSE"/>
-                        <outletCollection property="cardButtons" destination="H3V-bR-AjA" id="e7W-XF-z6O"/>
-                        <outletCollection property="cardButtons" destination="AAa-Au-0bE" id="4D8-y6-JrQ"/>
-                        <outletCollection property="cardButtons" destination="oyn-qk-Gv1" id="p5F-um-hEz"/>
-                        <outletCollection property="cardButtons" destination="4c3-BH-WBA" id="5A1-FC-IIv"/>
-                        <outletCollection property="cardButtons" destination="uOY-gL-kXR" id="RCc-zd-Xkr"/>
-                        <outletCollection property="cardButtons" destination="GqX-xM-vXc" id="KYy-jl-vzT"/>
-                        <outletCollection property="cardButtons" destination="4fr-ZI-wQA" id="Gyh-rq-HFJ"/>
-                        <outletCollection property="cardButtons" destination="EK6-nL-XEr" id="Hte-ce-cmZ"/>
-                        <outletCollection property="cardButtons" destination="eUb-81-p9F" id="uqR-Qz-lJU"/>
-                        <outletCollection property="cardButtons" destination="dOu-zc-p3y" id="YOU-JV-599"/>
-                        <outletCollection property="cardButtons" destination="KBz-4o-eKE" id="0yX-9p-jIT"/>
+                        <outletCollection property="cardButtons" destination="fWv-0p-7IF" id="2ku-Hu-8hL"/>
+                        <outletCollection property="cardButtons" destination="vic-gc-fkM" id="jT7-Rt-W4Q"/>
+                        <outletCollection property="cardButtons" destination="c51-DL-6cD" id="2ce-2g-ztA"/>
+                        <outletCollection property="cardButtons" destination="pL0-eW-ztc" id="CwN-yQ-fiF"/>
+                        <outletCollection property="cardButtons" destination="SRw-cG-mbC" id="yiW-eV-zy8"/>
+                        <outletCollection property="cardButtons" destination="5Gn-3f-LbV" id="5oZ-NO-j2r"/>
+                        <outletCollection property="cardButtons" destination="jgT-W8-Ici" id="095-oh-rC0"/>
+                        <outletCollection property="cardButtons" destination="T4p-yt-qrD" id="UDh-28-394"/>
+                        <outletCollection property="cardButtons" destination="8HN-pV-ZK3" id="9ot-rh-2Tn"/>
+                        <outletCollection property="cardButtons" destination="mAP-Xo-WlL" id="nXE-bO-Jbp"/>
+                        <outletCollection property="cardButtons" destination="GrI-6S-pyT" id="xYv-r3-VeS"/>
+                        <outletCollection property="cardButtons" destination="1X0-FV-Q7t" id="x7B-SQ-emw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492.5" y="267.25352112676057"/>
+            <point key="canvasLocation" x="1492" y="266.71664167916043"/>
         </scene>
         <!--Set-->
         <scene sceneID="UE1-B2-blI">

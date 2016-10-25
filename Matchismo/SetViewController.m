@@ -13,7 +13,6 @@
 
 @interface SetViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-
 @end
 
 @implementation SetViewController
