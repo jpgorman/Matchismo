@@ -55,6 +55,7 @@
 
 - (void)updateUI
 {
+    [super updateUI];
     for (PlayingCardView *playingCardView in self.cardButtons) {
         
         

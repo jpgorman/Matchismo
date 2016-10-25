@@ -81,8 +81,19 @@
         SetCard *card = (SetCard *)[self.game cardAtIndex:cardIndex];
         
         NSAttributedString *attString = [self getAttributedStringForCard:card];
-        [cardButton setBackgroundImage:nil
-                              forState:UIControlStateNormal];
+        [cardButton setBackgroundImage:nil forState:UIControlStateNormal];
+        
+        
+        // card border radius
+        [[cardButton layer] setBorderWidth:1.0f];
+        [[cardButton layer] setCornerRadius:5.0f];
+        [[cardButton layer] setBorderColor:[UIColor lightGrayColor].CGColor];
+        
+        if(card.isChosen) {
+            [cardButton setBackgroundColor:[UIColor colorWithRed:0.60 green:0.60 blue:0.60 alpha:0.3]];
+        } else {
+            [cardButton setBackgroundColor:[UIColor whiteColor]];
+        }
         
         [cardButton setAttributedTitle:attString forState:UIControlStateNormal];
         

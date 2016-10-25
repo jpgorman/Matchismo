@@ -58,32 +58,13 @@ static const int MAX_MATCH_LIMIT = 3;
     return limit;
 }
 
-- (UIImage *)backgroundImageForCard:(Card *)card
-{
-    return [UIImage imageNamed:card.isChosen ? @"front" : @"back"];
-}
-
 - (void)updateUI
 {
     for (UIButton *cardButton in self.cardButtons) {
         NSUInteger cardIndex = [self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:cardIndex];
-        [cardButton setBackgroundImage:[self backgroundImageForCard:card]
-                              forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
         cardButton.alpha = card.isMatched ? 0.3 : 1.0;
-        
-        
-        // card border radius
-        [[cardButton layer] setBorderWidth:1.0f];
-        [[cardButton layer] setCornerRadius:5.0f];
-        [[cardButton layer] setBorderColor:[UIColor lightGrayColor].CGColor];
-        
-        if(card.isChosen) {
-            [cardButton setBackgroundColor:[UIColor colorWithRed:0.60 green:0.60 blue:0.60 alpha:0.9]];
-        } else {
-            [cardButton setBackgroundColor:[UIColor whiteColor]];
-        }
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", (int)self.game.score];
     self.chosenLabel.text = [NSString stringWithFormat:@"Currently Chosen: %@", self.game.currentMatchState];
