@@ -10,7 +10,7 @@
 #import "PlayingCard.h"
 #import "PlayingCardView.h"
 #import "PlayingCardDeck.h"
-#import "SetViewController.h"
+#import "HistoryViewController.h"
 
 @interface PlayCardGameViewController ()
 @property (strong, nonatomic) IBOutletCollection(PlayingCardView) NSArray *cardButtons;
@@ -22,10 +22,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"Set"]) {
-        if([segue.destinationViewController isKindOfClass:[SetViewController class]]) {
-            SetViewController *svc = (SetViewController *)segue.destinationViewController;
-            svc.thingToPass = @"thing to pass";
+    if ([segue.identifier isEqualToString:@"PlayingCardHistory"]) {
+        if([segue.destinationViewController isKindOfClass:[HistoryViewController class]]) {
+            HistoryViewController *hvc = (HistoryViewController *)segue.destinationViewController;
+            hvc.history = self.game.currentMatchState;
         }
     }
 }

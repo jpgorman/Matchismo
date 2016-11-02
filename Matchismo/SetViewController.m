@@ -9,6 +9,7 @@
 #import "SetViewController.h"
 #import "SetCard.h"
 #import "SetDeck.h"
+#import "HistoryViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface SetViewController ()
@@ -17,6 +18,17 @@
 
 @implementation SetViewController
 @dynamic cardButtons;
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"SetHistory"]) {
+        if([segue.destinationViewController isKindOfClass:[HistoryViewController class]]) {
+            HistoryViewController *hvc = (HistoryViewController *)segue.destinationViewController;
+            hvc.history = self.game.currentMatchState;
+        }
+    }
+}
+
 
 - (Deck *) createDeck
 {
