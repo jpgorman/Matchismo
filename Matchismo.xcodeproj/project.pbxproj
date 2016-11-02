@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B808167E1D99AE9E00A30316 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B808167D1D99AE9E00A30316 /* SetViewController.m */; };
+		B83655481DCA94FD007F613D /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B83655471DCA94FD007F613D /* HistoryViewController.m */; };
 		B8A323B01D63B89D00A8817C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A323AF1D63B89D00A8817C /* main.m */; };
 		B8A323B31D63B89D00A8817C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A323B21D63B89D00A8817C /* AppDelegate.m */; };
 		B8A323B61D63B89D00A8817C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A323B51D63B89D00A8817C /* ViewController.m */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		B808167C1D99AE9E00A30316 /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
 		B808167D1D99AE9E00A30316 /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
+		B83655461DCA94FD007F613D /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		B83655471DCA94FD007F613D /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		B8A323AA1D63B89D00A8817C /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A323AE1D63B89D00A8817C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8A323AF1D63B89D00A8817C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +124,8 @@
 				B8A323B41D63B89D00A8817C /* ViewController.h */,
 				B8A323B51D63B89D00A8817C /* ViewController.m */,
 				B8A323B71D63B89D00A8817C /* Main.storyboard */,
+				B83655461DCA94FD007F613D /* HistoryViewController.h */,
+				B83655471DCA94FD007F613D /* HistoryViewController.m */,
 				B8A323BA1D63B89D00A8817C /* Images.xcassets */,
 				B8A323BC1D63B89D00A8817C /* LaunchScreen.xib */,
 				B8A323AD1D63B89D00A8817C /* Supporting Files */,
@@ -281,6 +286,7 @@
 			files = (
 				B8A323E21D665E9900A8817C /* PlayingCard.m in Sources */,
 				B8A323DF1D665C1900A8817C /* Card.m in Sources */,
+				B83655481DCA94FD007F613D /* HistoryViewController.m in Sources */,
 				B8A323DC1D66598900A8817C /* Deck.m in Sources */,
 				B808167E1D99AE9E00A30316 /* SetViewController.m in Sources */,
 				B8C242511DB55C3C003A0C60 /* PlayingCardView.m in Sources */,
