@@ -15,7 +15,7 @@
 
 @implementation HistoryViewController
 
-- (void)setHistory:(NSString *)history
+- (void)setHistory:(NSAttributedString *)history
 {
     _history = history;
     if (self.view.window) [self updateUI];
@@ -44,7 +44,7 @@
 
 - (void)updateUI
 {
-    self.body.text = [self.body.text stringByAppendingString:self.history];
+    self.body.attributedText = self.history;
 }
 
 @end

@@ -82,6 +82,10 @@
     
     NSInteger cardIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:cardIndex withLimit:CARD_LIMIT];
+    SetCard *card = (SetCard *)[self.game cardAtIndex:cardIndex];
+    if(card.isChosen) {
+        [self.game updateCurrentMatchState: [self getAttributedStringForCard:card]];
+    }
     [self updateUI];
 }
 

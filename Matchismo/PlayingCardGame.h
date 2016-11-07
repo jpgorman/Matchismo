@@ -17,9 +17,11 @@
 - (void)chooseCardAtIndex:(NSUInteger)index
             withLimit:(int)limit;
 
+- (void)updateCurrentMatchState:(NSAttributedString *)stringToAdd;
+
 - (Card *)cardAtIndex:(NSUInteger)index;
 
 @property (nonatomic, readonly) NSInteger score;
-@property (nonatomic, readonly) NSMutableString *currentMatchState;
+@property (nonatomic, readonly) NSMutableAttributedString *currentMatchState;
 
 @end

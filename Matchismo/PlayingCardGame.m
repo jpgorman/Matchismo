@@ -10,7 +10,7 @@
 
 @interface PlayingCardGame()
 @property (nonatomic, readwrite) NSInteger score;
-@property (nonatomic, readwrite) NSMutableString *currentMatchState;
+@property (nonatomic, readwrite) NSMutableAttributedString *currentMatchState;
 @property (nonatomic, strong) NSMutableArray *cards;
 @property (nonatomic, strong) NSMutableArray *chosenCards;
 @property (nonatomic) int matchLimit;
@@ -25,9 +25,9 @@ static const int DEFAULT_MATCH_LIMIT = 2;
 @implementation PlayingCardGame
 @synthesize matchLimit = _matchLimit; // because custom setter and getter
 
-- (NSMutableString *)currentMatchState
+- (NSMutableAttributedString *)currentMatchState
 {
-    if(!_currentMatchState) _currentMatchState = [NSMutableString stringWithString:@""];
+    if(!_currentMatchState) _currentMatchState = [[NSMutableAttributedString alloc] initWithString:@""];
     return _currentMatchState;
 }
 
@@ -73,6 +73,13 @@ static const int DEFAULT_MATCH_LIMIT = 2;
     return self;
 }
 
+- (void)updateScore:(int)score
+{
+    self.score += score;
+    NSMutableAttributedString *contents = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%d", @"scored:", score]];
+    [self updateCurrentMatchState:contents];
+}
+
 - (void)getScores
 {
     NSUInteger count = [self.chosenCards count] - 1;
@@ -84,24 +91,18 @@ static const int DEFAULT_MATCH_LIMIT = 2;
         int matchScore = [firstCard match:self.chosenCards];
         // match if score isn't nil
         if (matchScore) {
-            [self updateCurrentMatchState:[NSString stringWithFormat:@"%d", matchScore * MATCH_BONUS]];
+            [self updateScore:matchScore * MATCH_BONUS];
             self.score += matchScore * MATCH_BONUS;
         } else {
-            [self updateCurrentMatchState:[NSString stringWithFormat:@"%d", MISMATCH_PENALTY]];
+            [self updateScore:-1*MISMATCH_PENALTY];
             self.score -= MISMATCH_PENALTY;
         }
     }
 }
 
--(void)updateCurrentMatchState:(NSString *)stringToAdd
+-(void)updateCurrentMatchState:(NSAttributedString *)stringToAdd
 {
-    [self.currentMatchState appendString:stringToAdd];
-    [self.currentMatchState appendString:@" "];
-}
-
--(void)resetCurrentMatchState
-{
-    [self.currentMatchState setString:@""];
+    [self.currentMatchState appendAttributedString:stringToAdd];
 }
 
 - (void)matchChosenCards
@@ -157,16 +158,9 @@ static const int DEFAULT_MATCH_LIMIT = 2;
             
             if([self.chosenCards count] < self.matchLimit) {
                 
-                if([self.chosenCards count] == 0) {
-                    // reset match state
-                    [self resetCurrentMatchState];
-                }
-                
-                [self updateCurrentMatchState:card.contents];
-                
-                self.score -= COST_TO_CHOOSE;
+                [self updateScore:-1*MISMATCH_PENALTY];
                 card.chosen = YES;
-            
+                
                 [self.chosenCards addObject:card];
                 [self getScores];
                 [self matchChosenCards];
