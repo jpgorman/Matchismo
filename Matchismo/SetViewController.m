@@ -88,6 +88,9 @@
         [self.game updateCurrentMatchState: [self getAttributedStringForCard:card]];
     }
     [self updateUI];
+    [self.game checkForMatches:^{
+        [self updateUI];
+    }];
 }
 
 - (void)updateUI

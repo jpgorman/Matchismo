@@ -83,7 +83,7 @@ static const int DEFAULT_MATCH_LIMIT = 2;
 - (void)updateScore:(int)score
 {
     self.score += score;
-    NSMutableAttributedString *contents = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%d", @"scored:", score]];
+    NSMutableAttributedString *contents = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%d", @"You scored: ", score]];
     [self updateCurrentMatchState:contents];
 }
 

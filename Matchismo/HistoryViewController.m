@@ -75,7 +75,7 @@
     [self.scrollView addSubview:stackView];
     
     CGSize newContentSize=self.scrollView.contentSize;
-    newContentSize.height+=130*[self.historyArray count];
+    newContentSize.height+=130*[self.historyArray count] - 30;
     [self.scrollView setContentSize:newContentSize];
     
     

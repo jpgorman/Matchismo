@@ -50,7 +50,7 @@
             [self.game chooseCardAtIndex:index withLimit:CARD_LIMIT];
             PlayingCard *playingcard = (PlayingCard *)[self.game cardAtIndex:index];
             if(playingcard.isChosen) {
-                NSAttributedString *contents = [[NSAttributedString alloc] initWithString:playingcard.contents];
+                NSMutableAttributedString *contents = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@%@", @"You chose: ", playingcard.contents]];
                 [self.game updateCurrentMatchState:contents];
             }
             [self updateUI];
