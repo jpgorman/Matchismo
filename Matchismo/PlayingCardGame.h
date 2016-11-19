@@ -18,10 +18,12 @@
             withLimit:(int)limit;
 
 - (void)updateCurrentMatchState:(NSAttributedString *)stringToAdd;
-
+- (void)checkForMatches:(void(^)(void))callback;
 - (Card *)cardAtIndex:(NSUInteger)index;
 
 @property (nonatomic, readonly) NSInteger score;
+@property (nonatomic, readonly) NSMutableArray *chosenCards;
 @property (nonatomic, readonly) NSMutableAttributedString *currentMatchState;
+@property (nonatomic, readonly) NSMutableArray *currentMatchStateArray;
 
 @end

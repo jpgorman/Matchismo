@@ -25,6 +25,7 @@
         if([segue.destinationViewController isKindOfClass:[HistoryViewController class]]) {
             HistoryViewController *hvc = (HistoryViewController *)segue.destinationViewController;
             hvc.history = self.game.currentMatchState;
+            hvc.historyArray = self.game.currentMatchStateArray;
         }
     }
 }

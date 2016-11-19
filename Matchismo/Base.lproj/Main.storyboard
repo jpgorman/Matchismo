@@ -187,22 +187,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4kb-ag-ihI">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2X-Mv-M1Q">
+                                <frame key="frameInset" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Eu1-SH-BN7" firstAttribute="top" secondItem="4kb-ag-ihI" secondAttribute="bottom" id="P4H-3n-qVV"/>
-                            <constraint firstItem="4kb-ag-ihI" firstAttribute="top" secondItem="Gvi-oY-dwX" secondAttribute="bottom" id="Wuv-rE-JQy"/>
-                            <constraint firstItem="4kb-ag-ihI" firstAttribute="leading" secondItem="LOr-UW-6oe" secondAttribute="leading" constant="16" id="s7N-qK-P0s"/>
-                            <constraint firstAttribute="trailing" secondItem="4kb-ag-ihI" secondAttribute="trailing" constant="16" id="w3L-Ev-hqj"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="body" destination="4kb-ag-ihI" id="ve0-r3-Rcq"/>
+                        <outlet property="scrollView" destination="I2X-Mv-M1Q" id="rn7-JM-Zo7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nT7-5w-lTK" userLabel="First Responder" sceneMemberID="firstResponder"/>

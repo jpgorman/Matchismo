@@ -26,6 +26,7 @@
         if([segue.destinationViewController isKindOfClass:[HistoryViewController class]]) {
             HistoryViewController *hvc = (HistoryViewController *)segue.destinationViewController;
             hvc.history = self.game.currentMatchState;
+            hvc.historyArray = self.game.currentMatchStateArray;
         }
     }
 }
@@ -37,7 +38,6 @@
 
 
 #define CARD_LIMIT 2
-
 
 - (void)tap:(UITapGestureRecognizer *)sender
 {
@@ -54,6 +54,9 @@
                 [self.game updateCurrentMatchState:contents];
             }
             [self updateUI];
+            [self.game checkForMatches:^{
+                [self updateUI];
+            }];
         }
     }
 }

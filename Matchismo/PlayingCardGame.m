@@ -11,6 +11,7 @@
 @interface PlayingCardGame()
 @property (nonatomic, readwrite) NSInteger score;
 @property (nonatomic, readwrite) NSMutableAttributedString *currentMatchState;
+@property (nonatomic, readwrite) NSMutableArray *currentMatchStateArray;
 @property (nonatomic, strong) NSMutableArray *cards;
 @property (nonatomic, strong) NSMutableArray *chosenCards;
 @property (nonatomic) int matchLimit;
@@ -29,6 +30,12 @@ static const int DEFAULT_MATCH_LIMIT = 2;
 {
     if(!_currentMatchState) _currentMatchState = [[NSMutableAttributedString alloc] initWithString:@""];
     return _currentMatchState;
+}
+
+- (NSMutableArray *)currentMatchStateArray
+{
+    if (!_currentMatchStateArray) _currentMatchStateArray = [[NSMutableArray alloc] init];
+    return _currentMatchStateArray;
 }
 
 - (NSMutableArray *)cards
@@ -102,6 +109,7 @@ static const int DEFAULT_MATCH_LIMIT = 2;
 
 -(void)updateCurrentMatchState:(NSAttributedString *)stringToAdd
 {
+    [self.currentMatchStateArray addObject:stringToAdd];
     [self.currentMatchState appendAttributedString:stringToAdd];
 }
 
@@ -138,6 +146,22 @@ static const int DEFAULT_MATCH_LIMIT = 2;
             }
             [self.chosenCards removeAllObjects];
         }
+    }
+}
+
+- (void)checkForMatches:(void (^)(void))callback {
+    if([self.chosenCards count] == self.matchLimit) {
+        double delayInSeconds = 0.5;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            //code to be executed on the main queue after delay
+            NSLog(@"Delayed");
+            for(Card *card in self.chosenCards) {
+                card.chosen = NO;
+            }
+            [self.chosenCards removeAllObjects];
+            callback(); // invoke block
+        });
     }
 }
 
