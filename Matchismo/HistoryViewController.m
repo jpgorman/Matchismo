@@ -14,8 +14,12 @@
 
 @end
 
+static const int VIEW_HEIGHT = 50;
+static const int VIEW_SPACING = 1;
+
 @implementation HistoryViewController
 
+#pragma mark - initialisation
 - (void)setHistory:(NSAttributedString *)history
 {
     _history = history;
@@ -29,18 +33,7 @@
 }
 
 
-- (void)drawText:(CGFloat)xPosition yPosition:(CGFloat)yPosition canvasWidth:(CGFloat)canvasWidth canvasHeight:(CGFloat)canvasHeight
-{
-    //Draw Text
-    CGRect textRect = CGRectMake(xPosition, yPosition, canvasWidth, canvasHeight);
-    NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
-    textStyle.alignment = NSTextAlignmentLeft;
-    
-    NSDictionary* textFontAttributes = @{NSFontAttributeName: [UIFont fontWithName: @"Helvetica" size: 12], NSForegroundColorAttributeName: UIColor.redColor, NSParagraphStyleAttributeName: textStyle};
-    
-    [@"Hello, World!" drawInRect: textRect withAttributes: textFontAttributes];
-}
-
+#pragma mark - update UI
 - (void) updateUI {
     
     NSLog(@"%@", self.historyArray);
@@ -52,19 +45,27 @@
     stackView.axis = UILayoutConstraintAxisVertical;
     stackView.distribution = UIStackViewDistributionEqualSpacing;
     stackView.alignment = UIStackViewAlignmentCenter;
-    stackView.spacing = 30;
+    stackView.spacing = VIEW_SPACING;
     
     for (NSAttributedString *history in self.historyArray) {
         
         //View 1
         UIView *view1 = [[UIView alloc] init];
-        view1.backgroundColor = [UIColor blueColor];
-        [view1.heightAnchor constraintEqualToConstant:100].active = true;
+        view1.backgroundColor = [UIColor whiteColor];
+        [view1.heightAnchor constraintEqualToConstant:VIEW_HEIGHT].active = true;
         [view1.widthAnchor constraintEqualToConstant:self.scrollView.bounds.size.width].active = true;
         
-        UILabel* lblText = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, self.scrollView.bounds.size.width, 100)];
+        // Add a bottomBorder.
+        CALayer *bottomBorder = [CALayer layer];
+        bottomBorder.frame = CGRectMake(0, VIEW_HEIGHT, self.scrollView.bounds.size.width, 1.0f);
+        bottomBorder.backgroundColor = [UIColor colorWithWhite:0.8f
+                                                         alpha:1.0f].CGColor;
+        
+        [[view1 layer] addSublayer:bottomBorder];
+        
+        UILabel* lblText = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, self.scrollView.bounds.size.width, VIEW_HEIGHT)];
         lblText.attributedText = history;
-        lblText.textColor = [UIColor whiteColor];
+        lblText.textColor = [UIColor blackColor];
         [view1 addSubview:lblText];
         
         
@@ -75,7 +76,7 @@
     [self.scrollView addSubview:stackView];
     
     CGSize newContentSize=self.scrollView.contentSize;
-    newContentSize.height+=130*[self.historyArray count] - 30;
+    newContentSize.height+=(VIEW_SPACING + VIEW_HEIGHT)*[self.historyArray count] - VIEW_SPACING;
     [self.scrollView setContentSize:newContentSize];
     
     
