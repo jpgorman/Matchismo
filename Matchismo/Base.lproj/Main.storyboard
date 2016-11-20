@@ -476,7 +476,7 @@
         <scene sceneID="G9K-g9-NHH">
             <objects>
                 <navigationController title="SetGameNavigationController" id="wB1-EW-7gO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Set Game" id="wEp-Vb-5Gj"/>
+                    <tabBarItem key="tabBarItem" title="Set Game" image="setgameicon" id="wEp-Vb-5Gj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UZQ-g0-UTf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -493,7 +493,7 @@
         <scene sceneID="gjO-aP-gBM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cFd-SD-C5q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Card Game" id="N4C-aj-LBw"/>
+                    <tabBarItem key="tabBarItem" title="Card Game" image="cardgameicon" id="N4C-aj-LBw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ve1-1O-DKg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -511,6 +511,8 @@
     </scenes>
     <resources>
         <image name="back" width="64" height="96"/>
+        <image name="cardgameicon" width="30" height="30"/>
+        <image name="setgameicon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4Oe-xS-Ku8"/>
