@@ -65,7 +65,6 @@ static const int VIEW_SPACING = 1;
         
         UILabel* lblText = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, self.scrollView.bounds.size.width, VIEW_HEIGHT)];
         lblText.attributedText = history;
-        lblText.textColor = [UIColor blackColor];
         [view1 addSubview:lblText];
         
         

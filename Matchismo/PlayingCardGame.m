@@ -133,12 +133,22 @@ static const int DEFAULT_MATCH_LIMIT = 2;
         
         if(!isMatched) {
             
+            NSMutableAttributedString *contents = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", @"Cards Didn't Match 😭"]];
+            
+            [self updateCurrentMatchState:contents];
+            
             // mark all cards unmatched
             for(Card *card in self.chosenCards) {
                 card.matched = NO;
             }
             
         } else {
+            
+            NSMutableAttributedString *contents = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", @"Cards Matched 😍"]];
+            
+            [self updateCurrentMatchState:contents];
+            
+            
             // mark all cards matched
             // remove from chosen cards
             for(Card *card in self.chosenCards) {
@@ -155,7 +165,6 @@ static const int DEFAULT_MATCH_LIMIT = 2;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             //code to be executed on the main queue after delay
-            NSLog(@"Delayed");
             for(Card *card in self.chosenCards) {
                 card.chosen = NO;
             }
@@ -182,7 +191,7 @@ static const int DEFAULT_MATCH_LIMIT = 2;
             
             if([self.chosenCards count] < self.matchLimit) {
                 
-                [self updateScore:-1*MISMATCH_PENALTY];
+                [self updateScore:-1*COST_TO_CHOOSE];
                 card.chosen = YES;
                 
                 [self.chosenCards addObject:card];
@@ -195,7 +204,6 @@ static const int DEFAULT_MATCH_LIMIT = 2;
 
 - (Card *)cardAtIndex:(NSUInteger)index
 {
-    NSLog(@"%s%lu", "card count", (unsigned long)[self.cards count]);
     return (index < [self.cards count]) ? self.cards[index] : nil;
 }
 

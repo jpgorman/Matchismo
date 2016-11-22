@@ -84,8 +84,12 @@
     NSInteger cardIndex = [self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:cardIndex withLimit:CARD_LIMIT];
     SetCard *card = (SetCard *)[self.game cardAtIndex:cardIndex];
+   
     if(card.isChosen) {
-        [self.game updateCurrentMatchState: [self getAttributedStringForCard:card]];
+        
+        NSMutableAttributedString *contents = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", @"You chose: "]];
+        [contents appendAttributedString:[self getAttributedStringForCard:card]];
+        [self.game updateCurrentMatchState: contents];
     }
     [self updateUI];
     [self.game checkForMatches:^{
